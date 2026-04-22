@@ -1,0 +1,152 @@
+.home-container {
+  position: relative;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+}
+
+.hire-me-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.name-primary {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, var(--text-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.name-secondary {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  font-weight: 600;
+  backdrop-filter: blur(var(--glass-blur));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md), 0 0 15px var(--accent-glow);
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-glow-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 2.5rem;
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+  /* Optional: filter: grayscale(20%) contrast(110%); */
+}
+
+/* Rotating glow ring around the image */
+.glow-ring {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border-radius: 3rem;
+  background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 50%, transparent 100%);
+  z-index: 1;
+  opacity: 0.5;
+  filter: blur(20px);
+  animation: rotateGlow 8s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .name-primary {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    justify-content: center;
+  }
+}
