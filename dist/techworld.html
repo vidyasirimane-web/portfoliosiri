@@ -1,0 +1,276 @@
+<style>
+    /* Smooth scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Background */
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background: linear-gradient(120deg, #4a90e2, #50c9c3);
+        color: gray;
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        padding: 40px;
+        color: white;
+    }
+
+    /* Navbar */
+    nav {
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 12px;
+        position: sticky;
+        top: 0;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #50c9c3;
+    }
+
+    /* Sections */
+    section {
+        padding: 50px 20px;
+    }
+
+    .course-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .course-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 15px;
+        padding: 15px;
+        width: 250px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .course-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Buttons */
+    button {
+        background: white;
+        color: #4a90e2;
+        border: none;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #4a90e2;
+        color: white;
+    }
+
+    /* Login popup */
+    #authBox {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 25px;
+        border-radius: 15px;
+        width: 300px;
+        text-align: center;
+    }
+
+    input,
+    textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 8px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: black;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1>🚀 TechWorld</h1>
+        <p>Upgrade Your Skills Anytime, Anywhere</p>
+        <div class="contact">
+            📧 techworld@gmail.com | 📞 9142897654
+        </div>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" onclick="openAuth()">Login</a>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" style="text-align:center; color:white;">
+        <h2>Learn. Build. Grow.</h2>
+        <p>Join thousands of students learning tech skills 🔥</p>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses">
+        <h2 style="text-align:center; color:white;">Our Courses</h2>
+
+        <div class="course-list">
+
+            <div class="course-card">
+                <h3>WEb DEVELOPMENT</h3>
+                <p>Build website structure</p>
+                <p>price:₹ 1 </p>
+                <button onclick="enroll('HTML Basics')">Enroll</button>
+                <video width="100%" controls>
+                    <source src="C:\Users\vidya\Videos\webdevelopment.mp4" type="video/mp4">
+                </video><br><br>
+            </div>
+
+            <div class="course-card">
+                <h3>REACT.JS</h3>
+                <p>Design beautiful UI</p>
+                <p>prise:₹ 1 </p>
+                <button onclick="enroll('CSS')">Enroll</button>
+                <video width="100%" controls>
+                    <source src="C:\Users\vidya\Videos\REACT.JS.mp4" type="video/mp4">
+                </video><br><br>
+            </div>
+
+            <div class="course-card">
+                <h3>JavaScript</h3>
+                <p>Add interactivity</p>
+                <p>price: ₹ 1 </p>
+                <button onclick="enroll('JavaScript')">Enroll</button>
+                <video width="100%" controls>
+                    <source src="C:\Users\vidya\Videos\JAVA.mp4" type="video/mp4">
+                </video><br><br>
+
+            </div>
+            <div class="course-card">
+                <h3>Basics in python</h3>
+                <p>Add interactivity</p>
+                <p>price:₹ free</p>
+                <button onclick="enroll('JavaScript')">Enroll</button>
+                <video width="100%" controls>
+                    <source src="C:\Users\vidya\Videos\PYTHON.mp4" type="video/mp4">
+                </video><br><br>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background:white;">
+        <h2>About Us</h2>
+        <p>
+            TechWorld is a modern e-learning platform focused on making
+            technology education simple and at Rs 1 for learners, affordable, and practical.
+        </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="color:white;">
+        <h2>Contact Us</h2>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea placeholder="Message"></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- LOGIN POPUP -->
+    <div id="authBox">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+
+        <h3>Register</h3>
+        <input type="text" placeholder="New Username">
+        <input type="password" placeholder="New Password">
+        <button onclick="register()">Register</button>
+
+        <br><br>
+        <button onclick="closeAuth()">Close</button>
+    </div>
+
+    <footer>
+        <p>© 2026 TechWorld | Learn Smart 🚀</p>
+    </footer>
+
+    <script>
+        function openAuth() {
+            document.getElementById("authBox").style.display = "block";
+        }
+
+        function closeAuth() {
+            document.getElementById("authBox").style.display = "none";
+        }
+
+        function login() {
+            alert("Welcome Back!");
+        }
+
+        function register() {
+            alert("Account Created!");
+        }
+
+        function sendMessage(e) {
+            e.preventDefault();
+            alert("Message Sent 🚀");
+        }
+
+        function enroll(course) {
+            let name = prompt("Enter your name:");
+
+            if (name) {
+                alert("🎉 Enrolled in " + course);
+
+                alert(
+                    "🎓 CERTIFICATE 🎓\n\n" +
+                    name + "\nSuccessfully completed\n" +
+                    course + "\n\nTechWorld"
+                );
+            }
+        }
+    </script>
+
+</body>
