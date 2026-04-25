@@ -4,6 +4,23 @@ import Card from '../components/Card';
 import './Contact.css';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert("Success! Your message has been sent.");
+        form.reset();
+      })
+      .catch((error) => alert("Error: " + error));
+  };
+
   return (
     <PageTransition>
       <div className="page-container">
@@ -53,10 +70,7 @@ const Contact = () => {
               name="contact" 
               method="POST" 
               data-netlify="true"
-              onSubmit={(e) => {
-                // Let Netlify handle the submission
-                // We don't call preventDefault() here if we want standard Netlify form behavior
-              }}
+              onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />
               <div className="form-group">
