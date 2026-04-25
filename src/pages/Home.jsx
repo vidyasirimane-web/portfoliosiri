@@ -90,10 +90,10 @@ const Home = () => {
                 <Download size={20} />
                 Download Resume
               </a>
-              <Link to="/resume" className="btn btn-outline">
+              <a href="/resume.png" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                 <FileText size={20} />
                 View Resume
-              </Link>
+              </a>
             </motion.div>
             
             <motion.div 
