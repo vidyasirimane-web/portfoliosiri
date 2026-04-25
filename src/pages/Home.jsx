@@ -3,7 +3,6 @@ import PageTransition from '../components/PageTransition';
 import { Link } from 'react-router-dom';
 import { Download, FileText } from 'lucide-react';
 import './Home.css';
-import profileImg from '../assets/profile.jpg';
 
 const GithubIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -118,7 +117,7 @@ const Home = () => {
             transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
           >
             <div className="image-glow-wrapper">
-              <img src={profileImg} alt="Vidya Sirimane" className="profile-image" />
+              <img src="/profile.jpg" alt="Vidya Sirimane" className="profile-image" />
               <div className="glow-ring"></div>
             </div>
           </motion.div>
