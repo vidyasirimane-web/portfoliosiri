@@ -86,7 +86,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, type: 'spring' }}
             >
-              <a href="/resume.pdf" download className="btn btn-primary">
+              <a href="/resume.png" download className="btn btn-primary">
                 <Download size={20} />
                 Download Resume
               </a>

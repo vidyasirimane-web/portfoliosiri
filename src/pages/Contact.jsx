@@ -48,20 +48,30 @@ const Contact = () => {
           </div>
 
           <Card style={{ padding: '2.5rem', margin: '0' }}>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form 
+              className="contact-form" 
+              name="contact" 
+              method="POST" 
+              data-netlify="true"
+              onSubmit={(e) => {
+                // Let Netlify handle the submission
+                // We don't call preventDefault() here if we want standard Netlify form behavior
+              }}
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required />
+                <input type="text" id="name" name="name" placeholder="Enter your name" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required />
+                <input type="email" id="email" name="email" placeholder="Enter your email" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Your Message</label>
-                <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
               </div>
               
               <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>

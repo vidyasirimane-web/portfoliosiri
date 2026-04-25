@@ -8,8 +8,8 @@ const Resume = () => {
       <div className="page-container" style={{ maxWidth: '800px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
           <h2 className="section-title" style={{ marginBottom: 0 }}>My Resume</h2>
-          <a href="/resume.pdf" download className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>
-            <Download size={16} /> Download PDF
+          <a href="/resume.png" download className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>
+            <Download size={16} /> Download Resume
           </a>
         </div>
         
